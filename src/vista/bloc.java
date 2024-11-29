@@ -13,36 +13,36 @@ public class bloc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        abrir = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Area = new javax.swing.JTextArea();
-        Guardar = new javax.swing.JButton();
-        Imagen = new javax.swing.JButton();
+        btnabrir = new javax.swing.JButton();
+        contenedor = new javax.swing.JScrollPane();
+        txtArea = new javax.swing.JTextArea();
+        btnGuardar = new javax.swing.JButton();
+        btnImagen = new javax.swing.JButton();
         label = new javax.swing.JLabel();
         txt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        abrir.setText("Abrir");
-        abrir.addActionListener(new java.awt.event.ActionListener() {
+        btnabrir.setText("Abrir");
+        btnabrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abrirActionPerformed(evt);
             }
         });
 
-        Area.setColumns(20);
-        Area.setRows(5);
-        jScrollPane1.setViewportView(Area);
+        txtArea.setColumns(20);
+        txtArea.setRows(5);
+        contenedor.setViewportView(txtArea);
 
-        Guardar.setText("Guardar");
-        Guardar.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GuardarActionPerformed(evt);
             }
         });
 
-        Imagen.setText("Imagen");
-        Imagen.addActionListener(new java.awt.event.ActionListener() {
+        btnImagen.setText("Imagen");
+        btnImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImagenActionPerformed(evt);
             }
@@ -55,13 +55,13 @@ public class bloc extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(contenedor)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(abrir)
+                        .addComponent(btnabrir)
                         .addGap(18, 18, 18)
-                        .addComponent(Guardar)
+                        .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(Imagen)
+                        .addComponent(btnImagen)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txt, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
@@ -76,12 +76,12 @@ public class bloc extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(abrir)
-                        .addComponent(Guardar)
-                        .addComponent(Imagen))
+                        .addComponent(btnabrir)
+                        .addComponent(btnGuardar)
+                        .addComponent(btnImagen))
                     .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                .addComponent(contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -89,11 +89,11 @@ public class bloc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirActionPerformed
-        con.abrir(Area);
+        con.abrir(txtArea);
     }//GEN-LAST:event_abrirActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        con.guradr(Area);
+        con.guradr(txtArea);
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void ImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImagenActionPerformed
@@ -136,11 +136,11 @@ public class bloc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Area;
-    private javax.swing.JButton Guardar;
-    private javax.swing.JButton Imagen;
-    private javax.swing.JButton abrir;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtArea;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnImagen;
+    private javax.swing.JButton btnabrir;
+    private javax.swing.JScrollPane contenedor;
     private javax.swing.JLabel label;
     private javax.swing.JTextField txt;
     // End of variables declaration//GEN-END:variables
