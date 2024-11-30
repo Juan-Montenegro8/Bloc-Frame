@@ -1,6 +1,5 @@
 package Modela;
 
-
 import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,14 +21,14 @@ public class control {
         fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         if(JFileChooser.APPROVE_OPTION==fc.showOpenDialog(area)){
             File archivo = fc.getSelectedFile();
-            FileReader lector =null;
+            FileReader lector;
             try {
                 lector = new FileReader(archivo);
                 BufferedReader br = new BufferedReader(lector);
-                 String linea;
-                 while((linea = br.readLine())!=null){
-                     area.setText(linea);
-                 }
+                String linea;
+                while((linea = br.readLine())!=null){
+                   area.setText(linea);
+                }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "No");
             }
