@@ -16,34 +16,34 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class control {
     
-    public void abrir(JTextArea area){
-        JFileChooser fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        if(JFileChooser.APPROVE_OPTION==fc.showOpenDialog(area)){
-            File archivo = fc.getSelectedFile();
+    public void abrir(JTextArea txtarea){
+        JFileChooser FileCh = new JFileChooser();
+        FileCh.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        if(JFileChooser.APPROVE_OPTION==FileCh.showOpenDialog(txtarea)){
+            File archivo = FileCh.getSelectedFile();
             FileReader lector;
             try {
                 lector = new FileReader(archivo);
-                BufferedReader br = new BufferedReader(lector);
+                BufferedReader reader = new BufferedReader(lector);
                 String linea;
-                while((linea = br.readLine())!=null){
-                   area.setText(linea);
+                while((linea = reader.readLine())!=null){
+                   txtarea.setText(linea);
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "No");
             }
         }
     }
-    public void guradr(JTextArea area){
-        JFileChooser fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        if(JFileChooser.APPROVE_OPTION==fc.showSaveDialog(area)){
-            File archivo = fc.getSelectedFile();
+    public void guradr(JTextArea txtarea){
+        JFileChooser FileCh = new JFileChooser();
+        FileCh.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        if(JFileChooser.APPROVE_OPTION==FileCh.showSaveDialog(txtarea)){
+            File archivo = FileCh.getSelectedFile();
             FileWriter fichero ;
-            String jaja= area.getText();
+            String area= txtarea.getText();
             try {
                 fichero = new FileWriter(archivo, true) ;
-                fichero.write(jaja);
+                fichero.write(area);
                 fichero.close();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "No");
@@ -51,23 +51,23 @@ public class control {
         }
 
     }
-    public void imagen (JLabel area, JTextField j){
-        JFileChooser fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+    public void imagen (JLabel lblarea, JTextField txtarea){
+        JFileChooser FileCh = new JFileChooser();
+        FileCh.setFileSelectionMode(JFileChooser.FILES_ONLY);
         FileNameExtensionFilter formato = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
         
-        fc.setFileFilter(formato);
-        int res;
+        FileCh.setFileFilter(formato);
+        int respuesta;
         
-        res = fc.showOpenDialog(null);
+        respuesta = FileCh.showOpenDialog(null);
         
-        if(JFileChooser.APPROVE_OPTION==res){
-            File archivo=fc.getSelectedFile();
-            j.setText(archivo.getAbsolutePath());
+        if(JFileChooser.APPROVE_OPTION==respuesta){
+            File archivo=FileCh.getSelectedFile();
+            txtarea.setText(archivo.getAbsolutePath());
             try {
-                ImageIcon i=new ImageIcon(archivo.toString());
-                Icon icono=new ImageIcon(i.getImage().getScaledInstance(area.getWidth(), area.getHeight(), Image.SCALE_DEFAULT));
-                area.setIcon(icono);
+                ImageIcon Imagen=new ImageIcon(archivo.toString());
+                Icon icono=new ImageIcon(Imagen.getImage().getScaledInstance(lblarea.getWidth(), lblarea.getHeight(), Image.SCALE_DEFAULT));
+                lblarea.setIcon(icono);
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "No");
             }
